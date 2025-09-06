@@ -1,4 +1,3 @@
-
 import { Product, Category } from './types';
 
 export const CATEGORIES: Category[] = [
@@ -17,7 +16,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'A stylish and durable vintage leather jacket from the 80s. In great condition, with minor signs of wear that add to its character.',
     price: 75.00,
     category: Category.FASHION,
-    imageUrl: 'https://picsum.photos/seed/jacket/400/400',
+    imageUrl: 'https://source.unsplash.com/400x400/?leather,jacket',
     sellerId: 'user1',
     sellerName: 'JaneDoe'
   },
@@ -27,7 +26,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Classic gaming console with two controllers and three popular games included. A must-have for any retro gaming enthusiast.',
     price: 120.00,
     category: Category.ELECTRONICS,
-    imageUrl: 'https://picsum.photos/seed/console/400/400',
+    imageUrl: 'https://source.unsplash.com/400x400/?retro,gaming,console',
     sellerId: 'user2',
     sellerName: 'JohnSmith'
   },
@@ -37,7 +36,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'An iconic armchair that brings a touch of mid-century elegance to any room. Solid wood frame and original upholstery.',
     price: 250.00,
     category: Category.HOME,
-    imageUrl: 'https://picsum.photos/seed/armchair/400/400',
+    imageUrl: 'https://source.unsplash.com/400x400/?mid-century,armchair',
     sellerId: 'user1',
     sellerName: 'JaneDoe'
   },
@@ -47,7 +46,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'A beautiful hardcover box set of J.R.R. Tolkien\'s epic fantasy series. Perfect for both new readers and long-time fans.',
     price: 45.00,
     category: Category.BOOKS,
-    imageUrl: 'https://picsum.photos/seed/books/400/400',
+    imageUrl: 'https://source.unsplash.com/400x400/?fantasy,books',
     sellerId: 'user3',
     sellerName: 'Bookworm'
   },
@@ -57,7 +56,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'A high-performance tennis racket, lightly used for one season. Strung and ready for the court.',
     price: 90.00,
     category: Category.SPORTS,
-    imageUrl: 'https://picsum.photos/seed/racket/400/400',
+    imageUrl: 'https://source.unsplash.com/400x400/?tennis,racket',
     sellerId: 'user4',
     sellerName: 'SportySpice'
   },
@@ -67,7 +66,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Hand-carved wooden chess set with intricate details. A beautiful and functional piece for any game lover.',
     price: 60.00,
     category: Category.TOYS,
-    imageUrl: 'https://picsum.photos/seed/chess/400/400',
+    imageUrl: 'https://source.unsplash.com/400x400/?chess,set',
     sellerId: 'user2',
     sellerName: 'JohnSmith'
   },
@@ -77,7 +76,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Full-sized acoustic guitar with a warm, rich tone. Comes with a soft case and a few picks. Ideal for beginners.',
     price: 150.00,
     category: Category.SPORTS,
-    imageUrl: 'https://picsum.photos/seed/guitar/400/400',
+    imageUrl: 'https://source.unsplash.com/400x400/?acoustic,guitar',
     sellerId: 'user1',
     sellerName: 'JaneDoe'
   },
@@ -87,7 +86,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Authentic designer sunglasses with UV protection. Classic aviator style that never goes out of fashion.',
     price: 85.00,
     category: Category.FASHION,
-    imageUrl: 'https://picsum.photos/seed/sunglasses/400/400',
+    imageUrl: 'https://source.unsplash.com/400x400/?sunglasses,fashion',
     sellerId: 'user4',
     sellerName: 'SportySpice'
   }
