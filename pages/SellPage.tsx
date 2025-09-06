@@ -1,7 +1,7 @@
-
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
+import { ProductContext } from '../contexts/ProductContext';
 import { CATEGORIES } from '../constants';
 import { Category } from '../types';
 
@@ -13,6 +13,7 @@ const SellPage: React.FC = () => {
     const [imagePreview, setImagePreview] = useState<string | null>(null);
     const [message, setMessage] = useState('');
     const auth = useContext(AuthContext);
+    const productContext = useContext(ProductContext);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -24,7 +25,6 @@ const SellPage: React.FC = () => {
     const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
             const file = e.target.files[0];
-            // Simulate client-side resizing
             const reader = new FileReader();
             reader.onload = (event) => {
                 setImagePreview(event.target?.result as string);
@@ -35,8 +35,22 @@ const SellPage: React.FC = () => {
     
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Mock submission
-        console.log({ title, description, price, category, image: imagePreview });
+        if (!auth?.user || !productContext) return;
+
+        if (!title || !description || !price || !category || !imagePreview) {
+            setMessage('Please fill out all fields and upload an image.');
+            return;
+        }
+
+        const newProductData = {
+            title,
+            description,
+            price: parseFloat(price),
+            category,
+            imageUrl: imagePreview, 
+        };
+        
+        productContext.addProduct(newProductData, auth.user);
         setMessage('Product listed successfully! Redirecting...');
         setTimeout(() => navigate('/'), 2000);
     };

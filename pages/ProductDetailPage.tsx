@@ -1,13 +1,13 @@
-
 import React, { useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { MOCK_PRODUCTS } from '../constants';
 import { CartContext } from '../contexts/CartContext';
+import { ProductContext } from '../contexts/ProductContext';
 import { PlusIcon } from '../components/ui/Icons';
 
 const ProductDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const product = MOCK_PRODUCTS.find(p => p.id === id);
+  const productContext = useContext(ProductContext);
+  const product = productContext?.products.find(p => p.id === id);
   const cart = useContext(CartContext);
 
   if (!product) {

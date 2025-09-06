@@ -1,21 +1,23 @@
-
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useContext } from 'react';
 import ProductCard from '../components/ProductCard';
-import { MOCK_PRODUCTS, CATEGORIES } from '../constants';
-import { Category, Product } from '../types';
+import { CATEGORIES } from '../constants';
+import { Category } from '../types';
 import { SearchIcon } from '../components/ui/Icons';
+import { ProductContext } from '../contexts/ProductContext';
 
 const HomePage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<Category | 'All'>('All');
+  const productContext = useContext(ProductContext);
   
   const filteredProducts = useMemo(() => {
-    return MOCK_PRODUCTS.filter(product => {
+    const products = productContext?.products || [];
+    return products.filter(product => {
       const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
       const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase());
       return matchesCategory && matchesSearch;
     });
-  }, [searchTerm, selectedCategory]);
+  }, [searchTerm, selectedCategory, productContext?.products]);
 
   return (
     <div className="container mx-auto px-6 py-8">
