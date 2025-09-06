@@ -28,3 +28,13 @@ export interface User {
   email: string;
   username: string;
 }
+
+export interface Review {
+  id: string;
+  productId: string;
+  userId: string;
+  username: string;
+  rating: number;
+  comment: string;
+  date: string;
+}
