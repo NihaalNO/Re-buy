@@ -1,0 +1,5 @@
+{
+  "name": "EcoFinds - Second-hand Marketplace",
+  "description": "EcoFinds is a foundational second-hand marketplace platform that enables users to buy and sell pre-owned items, promoting circular economy principles. The MVP focuses on core authentication, product listing, and browsing functionalities with a responsive desktop-first design.",
+  "requestFramePermissions": []
+}
